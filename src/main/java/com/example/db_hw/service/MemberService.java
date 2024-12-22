@@ -35,8 +35,6 @@ public class MemberService {
     public boolean authenticate(MemberDTO memberdto) {
         Member member = memberRepository.findByUsername(memberdto.getUsername())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        //return member != null && Objects.equals(memberdto.getPassword(), member.getPassword());
-        // 암호화된 비밀번호 비교
         return passwordEncoder.matches(memberdto.getPassword(), member.getPassword());
     }
 }

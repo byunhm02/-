@@ -25,28 +25,6 @@ public class WalkController {
     public String walkMapping() {
         return "walkMapping"; // walkMapping.html 페이지 반환
     }
-    /*
-    @PostMapping("/walk/mapping")
-    public String saveWalkMapping(@RequestParam("region") String region,
-                                  @RequestParam("walkTime") String walkTime,
-                                  @RequestParam("memberId") Long memberId,
-                                  Model model) {
-        walkMappingService.saveWalkMapping(memberId, region, walkTime);
-        // 매칭 로직
-        List<String> matchedMembers= walkMappingService.matchWalk(region, walkTime,memberId);
-        model.addAttribute("region", region);
-        model.addAttribute("walkTime", walkTime);
-        //model.addAttribute("matches", matches);
-
-        if (matchedMembers.isEmpty()) {
-            model.addAttribute("noMatches", true);
-        } else {
-            model.addAttribute("matchedMembers", matchedMembers);
-        }
-        return "walkmatched";
-    }
-
-     */
     @PostMapping("/walk/mapping")
     public String saveWalkMapping(@RequestParam("region") String region,
                                   @RequestParam("walkTime") String walkTime,

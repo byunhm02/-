@@ -28,20 +28,6 @@ public class AuthController {
     public String registerForm() {
         return "register"; // 회원가입 폼 페이지(register.html)를 반환
     }
-    /*
-    @PostMapping("auth/register")
-    public String register(@RequestParam("username") String username,@RequestParam("password")String passwoprd){
-
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setUsername(username);
-        memberDTO.setPassword(passwoprd);
-        memberService.register(memberDTO);
-
-
-        return "loginForm";
-    }
-
-     */
     @PostMapping("auth/register")
     public String register(MemberDTO memberDTO) {
         Member member = new Member();

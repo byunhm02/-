@@ -23,23 +23,6 @@ public class PetInfoController {
         model.addAttribute("memberId",memberId);
         return "petInfoForm"; // petInfoForm.html
     }
-    /*
-    @PostMapping("/petInfo")
-    public String savePetInfo(@RequestParam("petType") String petType,
-                              @RequestParam("age") int age,
-                              @RequestParam("region") String region,
-                              @RequestParam("walkTime") String walkTime,
-                              @RequestParam("memberId") Long memberId) {
-        PetInfoDTO petInfoDTO = new PetInfoDTO();
-        petInfoDTO.setPetType(petType);
-        petInfoDTO.setAge(age);
-        petInfoDTO.setRegion(region);
-        petInfoDTO.setWalkTime(walkTime);
-        petInfoService.savePetInfo(petInfoDTO,memberId);
-        return "main"; // Redirect to main page
-    }
-
-     */
     @PostMapping("/petInfo")
     public String savePetInfo(@RequestParam("petType") String petType,
                               @RequestParam("age") int age,
