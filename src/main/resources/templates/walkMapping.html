@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk Mapping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .mapping-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="mapping-container">
+    <h1>산책 매핑</h1>
+    <p class="text-center text-muted">사용자와 펫 산책 스케줄을 매핑할 수 있습니다.</p>
+    <form action="/walk/mapping" method="post">
+        <!-- 사용자 ID를 숨겨진 필드로 전달 -->
+        <input type="hidden" name="memberId" value="1"> <!-- 실제 로그인된 사용자 ID로 대체 -->
+
+        <!-- 산책 지역 입력 -->
+        <div class="mb-3">
+            <label for="region" class="form-label">산책 지역</label>
+            <input type="text" id="region" name="region" class="form-control" placeholder="예: 서울, 부산" required>
+        </div>
+
+        <!-- 산책 선호 시간대 선택 -->
+        <div class="mb-3">
+            <label for="walkTime" class="form-label">선호 시간대</label>
+            <select id="walkTime" name="walkTime" class="form-select" required>
+                <option value="Morning">아침</option>
+                <option value="Afternoon">점심</option>
+                <option value="Evening">저녁</option>
+                <option value="Night">밤</option>
+            </select>
+        </div>
+
+        <!-- 제출 버튼 -->
+        <button type="submit" class="btn btn-primary">매핑하기</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
